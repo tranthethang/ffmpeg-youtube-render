@@ -1,4 +1,5 @@
 import os
+import shutil
 from pathlib import Path
 from .config import Config
 from .image_processor import ImageProcessor
@@ -59,6 +60,10 @@ def main():
                 
             if success:
                 print(f"Thành công: {audio_path.name}")
+                # Move audio to done folder
+                dest_path = Config.DONE_DIR / audio_path.name
+                shutil.move(str(audio_path), str(dest_path))
+                print(f"Đã di chuyển {audio_path.name} vào thư mục {Config.DONE_DIR.name}")
             else:
                 print(f"Thất bại: {audio_path.name}")
 

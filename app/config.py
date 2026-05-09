@@ -11,6 +11,7 @@ class Config:
     ASSETS_DIR = Path(os.getenv("ASSETS_DIR", "./assets"))
     INPUT_DIR = Path(os.getenv("INPUT_DIR", "./input"))
     OUTPUT_DIR = Path(os.getenv("OUTPUT_DIR", "./output"))
+    DONE_DIR = Path(os.getenv("DONE_DIR", "./done"))
     LOGS_DIR = Path("./logs")
 
     # --- Video Settings ---
@@ -49,6 +50,7 @@ class Config:
         cls.ASSETS_DIR.mkdir(parents=True, exist_ok=True)
         cls.INPUT_DIR.mkdir(parents=True, exist_ok=True)
         cls.OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+        cls.DONE_DIR.mkdir(parents=True, exist_ok=True)
         cls.LOGS_DIR.mkdir(parents=True, exist_ok=True)
         
         # Check assets subdirectories

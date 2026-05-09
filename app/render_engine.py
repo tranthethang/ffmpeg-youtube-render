@@ -111,15 +111,13 @@ class RenderEngine:
             )
             for line in process.stdout:
                 f.write(line)
-                if "frame=" in line:
-                    print(f"\rProgress: {line.strip()}", end="")
             
             process.wait()
             if process.returncode != 0:
-                print(f"\nLỗi render: Kiểm tra log tại {log_file}")
+                print(f"Lỗi render: Kiểm tra log tại {log_file}")
                 return False
             
-            print(f"\nHoàn tất: {output_path}")
+            print(f"Hoàn tất: {output_path}")
             return True
 
 if __name__ == "__main__":
